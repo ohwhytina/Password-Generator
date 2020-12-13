@@ -1,8 +1,8 @@
 // array in parameters
-var symbolcharInfo = ['~','!','@','#','%','^','&','*','(',')','_','+'];
+var symbolcharInfo = ['!@#$%^&*()_+'];
 var numbercharInfo = ["0123456789"];
-var lowercaseInfo = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var uppercaseInfo = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var lowercaseInfo = ['abcdefghijklmopqrstuvwxyz'];
+var uppercaseInfo = ['ABCDEFGHIJKLMNOPQRSTUVWYZ'];
 var Length = "";
 
 // Get references to the #generate element
@@ -12,21 +12,21 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
     //pop up to enter length
     var includeLength = window.prompt("How many characters would you like your password to contain?");
-    //must be between 8-128 characters, loop if enter outside of 8-128
-    while(includeLength <=8 && includeLength >= 128) {
-      window.alert("Password length must be between 8 to 128 characters.");
+    //must be between 8-128 characters and a number
+    while(includeLength <= 7 || includeLength >= 129 || isNaN(includeLength)) {
+      window.alert("Invaild Input. Password length must be between 8 to 128 characters. Please enter numbers only.");
       //try again
       var includeLength = window.prompt("How many characters would you like your password to contain?");
-    }
+    }; 
     //add symbol characters
     var includesymboleChar = window.confirm("Click OK to confirm including special characters.");
     //add numberic characters
     var includenumberChar = window.confirm("Click OK to confirm including numeric characters.");
-    //add lowercase characters
+    //add lowercase characterss
     var includelowerCase = window.confirm("Click OK to confirm including lowercase characters.");
     //add uppercase characters
     var includeupperCase = window.confirm("Click OK to confirm including uppercase characters.");
-    //if not chosen, don't add parater
+    //if not chosen, don't add parameter
     while(
       includesymboleChar ===false 
       && includenumberChar === false
