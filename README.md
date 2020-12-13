@@ -15,4 +15,4 @@ https://ohwhytina.github.io/Password-Generator/
 Tina Nguyen
 
 ## Screenshoot
-https://raw.githubusercontent.com/ohwhytina/Portfolio/master/asset/image/Screenshot.jpg
+https://raw.githubusercontent.com/ohwhytina/Password-Generator/master/Image/Website%20Screenshot.png
