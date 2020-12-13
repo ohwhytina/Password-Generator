@@ -9,14 +9,14 @@ var Length = "";
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function generatePassword() {
     //pop up to enter length
     var includeLength = window.prompt("How many characters would you like your password to contain?");
     //must be between 8-128 characters and a number
     while(includeLength <= 7 || includeLength >= 129 || isNaN(includeLength)) {
       window.alert("Invaild Input. Password length must be between 8 to 128 characters. Please enter numbers only.");
-      //try again
-      var includeLength = window.prompt("How many characters would you like your password to contain?");
+        //try again
+        var includeLength = window.prompt("How many characters would you like your password to contain?");
     }; 
     //add symbol characters
     var includesymboleChar = window.confirm("Click OK to confirm including special characters.");
@@ -35,11 +35,11 @@ function writePassword() {
       {
       //must include 1 parameter
       window.alert("You must choose at least one parameter");
-      //try again, chosen at least 1
-    var includesymboleChar = window.confirm("Click OK to confirm including special.");
-    var includenumberChar = window.confirm("Click OK to confirm including numeric characters.");
-    var includelowerCase = window.confirm("Click OK to confirm including lowercase characters.");
-    var includeupperCase = window.confirm("Click OK to confirm including uppercase characters.");
+        //try again, chosen at least 1
+        var includesymboleChar = window.confirm("Click OK to confirm including special characters.");
+        var includenumberChar = window.confirm("Click OK to confirm including numeric characters.");
+        var includelowerCase = window.confirm("Click OK to confirm including lowercase characters.");
+        var includeupperCase = window.confirm("Click OK to confirm including uppercase characters.");
     }
     
    //combine chosen parmeter(s)
@@ -62,7 +62,7 @@ function writePassword() {
      // randomize parameter with length entered
      var randomPassword = "";
      
-     for (let i = 0; i < includeLength; ++i) {
+     for (let i = 0; i < includeLength; i++) {
           randomPassword = randomPassword + passwordOption[Math.floor(Math.random() * passwordOption.length)];
           //display random password combination in console per length ented
           console.log(randomPassword);
@@ -71,8 +71,8 @@ function writePassword() {
    };
    
    //display password in box
-    function generatePassword() {
-    var password = writePassword();
+    function writePassword() {
+    var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
 
